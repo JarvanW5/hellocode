@@ -4,10 +4,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @Author:JarvanW
- * @Date:2024/6/25
+ * @Author: JarvanW
+ * @Date: 2024/6/25
  * @Description: 水果成篮
- * @Version:1.8
+ * @Version: 1.8
  * @Requirement: 你正在探访一家农场，农场从左到右种植了一排果树。这些树用一个整数数组 fruits 表示，其中 fruits[i] 是第 i 棵树上的水果 种类 。
  * <p>
  * 你想要尽可能多地收集水果。然而，农场的主人设定了一些严格的规矩，你必须按照要求采摘水果：
@@ -34,7 +34,6 @@ public class code904 {
     }
 
     /**
-     *
      * @param fruits
      * @return
      */
@@ -44,6 +43,9 @@ public class code904 {
 
         int left = 0, ans = 0;
         for (int right = 0; right < n; ++right) {
+            // fruits[right] 表示数组 fruits 中索引为 right 的元素，即当前要统计出现次数的元素。
+            // cnt.getOrDefault(key, defaultValue) 是 Map 接口的方法，用于获取指定 key 对应的值，如果该 key 不存在，则返回 defaultValue 指定的值。
+            // 在这里，fruits[right] 作为 key，用来从 cnt 中获取该元素出现的次数。如果 fruits[right] 已经在 cnt 中，则返回它的当前值；否则返回 0。
             cnt.put(fruits[right], cnt.getOrDefault(fruits[right], 0) + 1);
             while (cnt.size() > 2) {
                 cnt.put(fruits[left], cnt.get(fruits[left]) - 1);

@@ -21,6 +21,7 @@ public class code209 {
                 sum -= nums[left++];
             }
         }
+        // 这样的设计确保了函数在所有可能情况下都有明确的返回值，避免了未定义行为或者不符合预期的返回结果。
         return result == Integer.MAX_VALUE ? 0 : result;
     }
 
