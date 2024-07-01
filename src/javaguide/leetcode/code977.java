@@ -44,8 +44,8 @@ public class code977 {
         int[] nums2 = {-7, -3, 2, 3, 11};
 
         int[] squares1 = sortedSquares(nums2);
-        for (int i = 0; i < squares1.length; i++) {
-            System.out.println(squares1[i]);
+        for (int j : squares1) {
+            System.out.println(j);
 
         }
     }
