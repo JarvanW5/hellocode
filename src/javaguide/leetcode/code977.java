@@ -3,16 +3,16 @@ package javaguide.leetcode;
 import java.util.Arrays;
 
 /**
- * @Author:JarvanW
+ * @Author: JarvanW
  * @Date: 2024/6/25
  * @Description: 有序数组的平方
- * @Version:1.8
+ * @Version: 1.8
  * @Requirement: 给你一个按 非递减顺序 排序的整数数组 nums，返回 每个数字的平方 组成的新数组，要求也按 非递减顺序 排序。
  */
 public class code977 {
 
     public static int[] sortedSquares(int[] nums) {
-
+// 暴力 + 快排
         for (int i = 0; i < nums.length; i++) {
             nums[i] = (int) Math.pow(nums[i], 2);
         }
@@ -44,8 +44,8 @@ public class code977 {
         int[] nums2 = {-7, -3, 2, 3, 11};
 
         int[] squares1 = sortedSquares(nums2);
-        for (int i = 0; i < squares1.length; i++) {
-            System.out.println(squares1[i]);
+        for (int j : squares1) {
+            System.out.println(j);
 
         }
     }
