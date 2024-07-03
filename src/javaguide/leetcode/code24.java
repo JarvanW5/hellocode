@@ -9,9 +9,9 @@ package javaguide.leetcode;
 
 public class code24 {
     public static ListNode swapPairs(ListNode head) {
-        ListNode dumyhead = new ListNode(-1); // 设置一个虚拟头节点
-        dumyhead.next = head; // 将虚拟头节点指向head，这样方便后面做删除操作
-        ListNode cur = dumyhead;
+        ListNode dummyhead = new ListNode(-1); // 设置一个虚拟头节点
+        dummyhead.next = head; // 将虚拟头节点指向head，这样方便后面做删除操作
+        ListNode cur = dummyhead;
         ListNode temp; // 临时节点，保存两个节点后面的节点
         ListNode firstnode; // 临时节点，保存两个节点之中的第一个节点
         ListNode secondnode; // 临时节点，保存两个节点之中的第二个节点
@@ -24,7 +24,7 @@ public class code24 {
             firstnode.next = temp;        // 步骤3
             cur = firstnode;      // cur移动，准备下一轮交换
         }
-        return dumyhead.next;
+        return dummyhead.next;
     }
 
     public static void main(String[] args) {
@@ -35,9 +35,9 @@ public class code24 {
 
 //        swapPairs(head);
 
-        ListNode dumyhead = new ListNode(-1); // 设置一个虚拟头节点
-        dumyhead.next = head; // 将虚拟头节点指向head，这样方便后面做删除操作
-        ListNode cur = dumyhead;
+        ListNode dummyhead = new ListNode(-1); // 设置一个虚拟头节点
+        dummyhead.next = head; // 将虚拟头节点指向head，这样方便后面做删除操作
+        ListNode cur = dummyhead;
 
         swapPairs(head);
 
