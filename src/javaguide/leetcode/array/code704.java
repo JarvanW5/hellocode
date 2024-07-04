@@ -1,24 +1,27 @@
-package javaguide.leetcode;
+package javaguide.leetcode.array;
 
 /**
  * @Author:JarvanW
  * @Date: 2024/6/21
- * @Description: 搜索插入位置
+ * @Description: 二分查找
  * @Version:1.8
  * @Requirement:
  */
-public class code35 {
+public class code704 {
     public static void main(String[] args) {
-        int nums[] = {1, 3, 5, 6};
-        int target = 4;
-        int insert = searchInsert(nums, target);
-        System.out.println(insert);
+        int[] nums = {-1, 0, 3, 5, 9, 12};
+        int target = 9;
+        int search = search(nums, target);
+        System.out.println(search);
+
 
     }
 
-
-    public static int searchInsert(int[] nums, int target) {
+    public static int search(int[] nums, int target) {
         int length = nums.length - 1;
+        if (nums[length] < target || nums[0] > target) {
+            return -1;
+        }
         int left = 0;
         int right = length;
         while (left <= right) {
@@ -27,10 +30,11 @@ public class code35 {
                 right = middle - 1;
             } else if (nums[middle] < target) {
                 left = middle + 1;
-            } else {
+            } else if (nums[middle] == target) {
                 return middle;
             }
+
         }
-        return right + 1;
+        return -1;
     }
 }

@@ -1,6 +1,4 @@
-package javaguide.leetcode;
-
-import java.util.ArrayList;
+package javaguide.leetcode.array;
 
 /**
  * @Author: JarvanW
