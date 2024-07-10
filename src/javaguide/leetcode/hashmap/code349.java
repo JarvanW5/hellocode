@@ -33,6 +33,7 @@ public class code349 {
         }
         return getIntersection(set1, set2);
     }
+
     public static int[] getIntersection(Set<Integer> set1, Set<Integer> set2) {
         if (set1.size() > set2.size()) {
             return getIntersection(set2, set1);
@@ -50,6 +51,7 @@ public class code349 {
         }
         return intersection;
     }
+
     public static void main(String[] args) {
         int[] nums1 = {1, 2, 2, 1};
         int[] nums2 = {2, 2};
