@@ -58,7 +58,6 @@ public class code454 {
                 else map.put(sum1, 1);
             }
         }
-
         for (int i = 0; i < nums3.length; i++) {
             for (int j = 0; j < nums4.length; j++) {
                 int sum2 = -(nums3[i] + nums4[j]);
@@ -77,7 +76,6 @@ public class code454 {
         int count = fourSumCount(nums1, nums2, nums3, nums4);
 
         int count1 = fourSumCount1(nums1, nums2, nums3, nums4);
-
 
         System.out.println(count);
 
