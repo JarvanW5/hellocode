@@ -1,13 +1,11 @@
 package javaguide.leetcode.array;
 
 /**
- * @Author:JarvanW
- * @Date:2024/6/25
+ * @Author: JarvanW
+ * @Date: 2024/6/25
  * @Description: 比较含退格的字符串
- * @Version:1.8
- * @Requirement:
- *
- * 给定 s 和 t 两个字符串，当它们分别被输入到空白的文本编辑器后，如果两者相等，返回 true 。# 代表退格字符。
+ * @Version: 1.8
+ * @Requirement: 给定 s 和 t 两个字符串，当它们分别被输入到空白的文本编辑器后，如果两者相等，返回 true 。# 代表退格字符。
  */
 public class code844 {
 
@@ -15,6 +13,7 @@ public class code844 {
         return build(S).equals(build(T));
     }
 
+    // 使用栈的思想来进行操作
     public static String build(String str) {
         StringBuffer ret = new StringBuffer();
         int length = str.length();

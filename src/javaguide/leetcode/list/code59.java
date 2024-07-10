@@ -1,4 +1,4 @@
-package javaguide.leetcode.array;
+package javaguide.leetcode.list;
 
 /**
  * @Author: JarvanW

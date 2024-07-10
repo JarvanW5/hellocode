@@ -14,7 +14,7 @@ package javaguide.leetcode.array;
  */
 public class code27 {
     public static void main(String[] args) {
-        int[] nums = {3,2,2,3};
+        int[] nums = {3, 2, 2, 3, 4, 5};
         int val = 3;
         int i = removeElement(nums, val);
         System.out.println(i);
@@ -24,15 +24,15 @@ public class code27 {
     public static int removeElement(int[] nums, int val) {
         int left = 0;
         int right = nums.length - 1;
-        while(right >= 0 && nums[right] == val) right--; //将right移到从右数第一个值不为val的位置
-        while(left <= right) {
-            if(nums[left] == val) { //left位置的元素需要移除
+        while (right >= 0 && nums[right] == val) right--; //将right移到从右数第一个值不为val的位置
+        while (left <= right) {
+            if (nums[left] == val) { //left位置的元素需要移除
                 //将right位置的元素移到left（覆盖），right位置移除
                 nums[left] = nums[right];
                 right--;
             }
             left++;
-            while(right >= 0 && nums[right] == val) right--;
+            while (right >= 0 && nums[right] == val) right--;
         }
         return left;
     }

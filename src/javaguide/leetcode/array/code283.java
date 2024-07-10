@@ -1,10 +1,10 @@
 package javaguide.leetcode.array;
 
 /**
- * @Author:JarvanW
- * @Date:2024/6/25
+ * @Author: JarvanW
+ * @Date: 2024/6/25
  * @Description: 移动零
- * @Version:1.8
+ * @Version: 1.8
  * @Requirement: 给定一个数组 nums，编写一个函数将所有 0 移动到数组的末尾，同时保持非零元素的相对顺序。
  */
 public class code283 {

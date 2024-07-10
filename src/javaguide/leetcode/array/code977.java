@@ -43,7 +43,7 @@ public class code977 {
 //        int[] nums1 = {-4, -1, 0, 3, 10};
         int[] nums2 = {-7, -3, 2, 3, 11};
 
-        int[] squares1 = sortedSquares(nums2);
+        int[] squares1 = sortedSquares2(nums2);
         for (int j : squares1) {
             System.out.println(j);
 

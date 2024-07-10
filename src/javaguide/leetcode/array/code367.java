@@ -1,10 +1,10 @@
 package javaguide.leetcode.array;
 
 /**
- * @Author:JarvanW
- * @Date:2024/6/25
+ * @Author: JarvanW
+ * @Date: 2024/6/25
  * @Description: 有效的完全平方数
- * @Version:1.8
+ * @Version: 1.8
  * @Requirement: 给你一个正整数 num 。如果 num 是一个完全平方数，则返回 true ，否则返回 false 。
  * <p>
  * 完全平方数 是一个可以写成某个整数的平方的整数。换句话说，它可以写成某个整数和自身的乘积。
@@ -29,7 +29,7 @@ public class code367 {
                 left = middle + 1;
             } else if ((long) middle * middle > num) {
                 right = middle - 1;
-            }else if ((long)middle * middle == num){
+            } else if ((long) middle * middle == num) {
                 return true;
             }
         }
