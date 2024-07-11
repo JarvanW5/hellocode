@@ -67,19 +67,38 @@ public class code454 {
         return res;
     }
 
+    public static int fourSumCount2(int[] A, int[] B, int[] C, int[] D) {
+        Map<Integer, Integer> countAB = new HashMap<Integer, Integer>();
+        for (int u : A) {
+            for (int v : B) {
+                countAB.put(u + v, countAB.getOrDefault(u + v, 0) + 1);
+            }
+        }
+        int ans = 0;
+        for (int u : C) {
+            for (int v : D) {
+                if (countAB.containsKey(-u - v)) {
+                    ans += countAB.get(-u - v);
+                }
+            }
+        }
+        return ans;
+    }
+
     public static void main(String[] args) {
-        int[] nums1 = {1, 2};
-        int[] nums2 = {-2, -1};
-        int[] nums3 = {-1, 2};
+        int[] nums1 = {0, 1, 2};
+        int[] nums2 = {0, -2, -1};
+        int[] nums3 = {0, -1, 2};
         int[] nums4 = {0, 2};
 
         int count = fourSumCount(nums1, nums2, nums3, nums4);
-
-        int count1 = fourSumCount1(nums1, nums2, nums3, nums4);
-
         System.out.println(count);
 
+        int count1 = fourSumCount1(nums1, nums2, nums3, nums4);
         System.out.println(count1);
+
+        int count2 = fourSumCount2(nums1, nums2, nums3, nums4);
+        System.out.println(count2);
     }
 
 }
