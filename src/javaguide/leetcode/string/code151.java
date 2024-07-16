@@ -36,17 +36,21 @@ public class code151 {
         //反转每个单词
         reverseEachWord(sb);
         return new String(sb);
-
-
     }
 
-    // 将字符串s中的字符进行翻转，将连续的空格压缩成一个空格，返回反转后的字符串
+    // 将字符串s中的字符进行翻转，将连续的空格压缩成一个空格，返回翻转后的字符串
     public static StringBuilder reverseSpace(String s) {
+        // 初始化两个指针 start 和 end 分别指向字符串 s 的首尾字符
         int start = 0, end = s.length() - 1;
+        // 跳过 start 指向的连续空格字符
         while (s.charAt(start) == ' ') start++;
+        // 跳过 end 指向的连续空格字符
         while (s.charAt(end) == ' ') end--;
+        // 创建一个 StringBuilder 对象 sb 用于存储翻转后的字符
         StringBuilder sb = new StringBuilder();
+        // 当 strat 小于等于 end 时，进行以下操作
         while (start <= end) {
+            // 如果 start 指向的字符是空格，则将空格字符添加到 sb 中，并将 start 指针移动到下一个非空格字符
             if (s.charAt(start) == ' ') {
                 sb.append(' ');
                 ++start;
@@ -54,12 +58,14 @@ public class code151 {
                     ++start;
                 }
             }
+            // 将 start 指向的字符添加到 sb 中，并将 start 指针移动到下一个字符
             sb.append(s.charAt(start++));
-
         }
+        // 返回翻转后的字符串 sb
         return sb;
     }
 
+    // 用于反转 sb 中的指定范围的字符串 从 start 到 end
     public static void reverseString(StringBuilder sb, int start, int end) {
         while (start < end) {
             char temp = sb.charAt(start);
@@ -70,7 +76,9 @@ public class code151 {
         }
     }
 
+    // 将字符串中的每个单词进行反转，使用两个指针 start 和 end 来确定每个单词的起始和结束位置
     public static void reverseEachWord(StringBuilder sb) {
+        // 初始化 start 和 end 为 0
         int start = 0, end = 0;
         while (end < sb.length()) {
             while (end < sb.length() && sb.charAt(end) != ' ') {
@@ -79,9 +87,7 @@ public class code151 {
             reverseString(sb, start, end - 1);
             end += 1;
             start = end;
-
         }
-
     }
 
     public static void main(String[] args) {
@@ -90,7 +96,6 @@ public class code151 {
 //        for (String string : s1) {
 //            System.out.println(string);
 //        }
-
         String s1 = reverseWords(s);
         System.out.println(s1);
     }
