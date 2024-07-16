@@ -106,6 +106,36 @@ public class code15 {
         return result;
     }
 
+    // 暴力解法
+    public static List<List<Integer>> threeSum3(int[] nums) {
+
+        List<List<Integer>> result = new ArrayList<>();
+
+        int length = nums.length;
+        if (length < 3) {
+            return Collections.emptyList();
+        }
+
+        Arrays.sort(nums);
+        for (int i = 0; i < length; i++) {
+            for (int j = i + 1; j < length; j++) {
+                for (int k = j + 1; k < length; k++) {
+                    if (nums[i] + nums[j] + nums[k] == 0) {
+                        List<Integer> list = new ArrayList<>();
+                        list.add(nums[i]);
+                        list.add(nums[j]);
+                        list.add(nums[k]);
+                        if (!result.contains(list)) {
+                            result.add(list);
+                        }
+                    }
+                }
+            }
+        }
+
+        return result;
+    }
+
     public static void main(String[] args) {
 
         int[] nums = {-1, 0, 1, 2, -1, -4};
@@ -113,16 +143,21 @@ public class code15 {
         // Arrays.asList的作用是将括号中的数据转化为list
         List<Integer> integers = Arrays.asList(1, 2, 3);
         System.out.println(integers);
-
-        List<List<Integer>> lists = threeSum1(nums);
-        for (List<Integer> list : lists) {
-            System.out.println(list);
-        }
-
+          // 哈希表法
+//        List<List<Integer>> lists = threeSum1(nums);
+//        for (List<Integer> list : lists) {
+//            System.out.println(list);
+//        }
+        // 双指针法
         List<List<Integer>> lists1 = threeSum2(nums);
         for (List<Integer> list : lists1) {
             System.out.println(list);
         }
+        // 暴力解法
+//        List<List<Integer>> lists2 = threeSum3(nums);
+//        for (List<Integer> list : lists2) {
+//            System.out.println(list);
+//        }
 
     }
 }
