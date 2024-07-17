@@ -53,9 +53,10 @@ public class code28 {
      * 空间复杂度：O(1)
      * 注：n为haystack的长度，m为needle的长度
      */
-    public int strStr1(String haystack, String needle) {
+    public static int strStr1(String haystack, String needle) {
         int m = needle.length();
         // 当 needle 是空字符串时我们应当返回 0
+        // 处理特殊情况，如果 needle 为空字符串，直接返回 0 ，因为任何字符串都可以认为包含空字符串
         if (m == 0) {
             return 0;
         }
@@ -63,6 +64,7 @@ public class code28 {
         if (n < m) {
             return -1;
         }
+        // 设置滑动窗口，初始化指针
         int i = 0;
         int j = 0;
         while (i < n - m + 1) {
@@ -73,9 +75,9 @@ public class code28 {
             if (i == n) {// 没有首字母相等的
                 return -1;
             }
-            // 遍历后续字符，判断是否相等
-            i++;
-            j++;
+//            // 遍历后续字符，判断是否相等
+//            i++;
+//            j++;
             while (i < n && j < m && haystack.charAt(i) == needle.charAt(j)) {
                 i++;
                 j++;
@@ -94,5 +96,7 @@ public class code28 {
         String haystack = "123sadbutsad", needle = "sad";
         int i = strStr(haystack, needle);
         System.out.println(i);
+        int j = strStr1(haystack, needle);
+        System.out.println(j);
     }
 }
