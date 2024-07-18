@@ -2,6 +2,7 @@ package javaguide.leetcode.tree;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 /**
  * @Author: JarvanW
@@ -29,6 +30,27 @@ public class code94 {
         inorder(root.right, result);
     }
 
+    // 迭代法求二叉树的中序
+    public static List<Integer> inorderTraversal1(TreeNode root) {
+        List<Integer> result = new ArrayList<>();
+        if (root == null){
+            return result;
+        }
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode cur = root;
+        while (cur != null || !stack.isEmpty()){
+            if (cur != null){
+                stack.push(cur);
+                cur = cur.left;
+            }else{
+                cur = stack.pop();
+                result.add(cur.val);
+                cur = cur.right;
+            }
+        }
+        return result;
+    }
+
     public static void main(String[] args) {
         // 创建二叉树
         TreeNode root = new TreeNode(1);
@@ -42,5 +64,8 @@ public class code94 {
         // 执行前序遍历并打印结果
         List<Integer> result = inorderTraversal(root);
         System.out.println(result);
+
+        List<Integer> integers = inorderTraversal1(root);
+        System.out.println(integers);
     }
 }
