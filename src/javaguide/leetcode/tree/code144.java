@@ -39,7 +39,7 @@ public class code144 {
     }
 
     // 迭代法求前序遍历
-    public List<Integer> preorderTraversal1(TreeNode root) {
+    public static List<Integer> preorderTraversal1(TreeNode root) {
         List<Integer> result = new ArrayList<>();
         if (root == null) {
             return result;
@@ -73,7 +73,7 @@ public class code144 {
         List<Integer> result = preorderTraversal(root);
         System.out.println(result);
 
-        List<Integer> result1 = preorderTraversal(root);
+        List<Integer> result1 = preorderTraversal1(root);
         System.out.println(result1);
     }
 }
