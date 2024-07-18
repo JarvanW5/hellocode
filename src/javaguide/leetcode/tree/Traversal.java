@@ -15,11 +15,17 @@ public class Traversal {
 
     // 迭代法前序遍历
     public static List<Integer> preorderTraversal(TreeNode root) {
+        // 创建一个空列表 result 用于存储遍历结果
         List<Integer> result = new LinkedList<>();
+        // 创建一个空的栈 st 用于辅助遍历
         Stack<TreeNode> st = new Stack<>();
+        // 如果根节点不为空，将其压入栈中
         if (root != null) st.push(root);
+        // 如果栈不为空
         while (!st.empty()) {
+            // 取出栈顶节点 node
             TreeNode node = st.peek();
+            // 如果 node 不为空
             if (node != null) {
                 st.pop(); // 将该节点弹出，避免重复操作，下面再将右中左节点添加到栈中
                 if (node.right != null) st.push(node.right);  // 添加右节点（空节点不入栈）
