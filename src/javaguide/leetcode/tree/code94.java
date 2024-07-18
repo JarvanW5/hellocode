@@ -65,7 +65,7 @@ public class code94 {
         List<Integer> result = inorderTraversal(root);
         System.out.println(result);
 
-        List<Integer> integers = inorderTraversal1(root);
-        System.out.println(integers);
+        List<Integer> result1 = inorderTraversal1(root);
+        System.out.println(result1);
     }
 }
