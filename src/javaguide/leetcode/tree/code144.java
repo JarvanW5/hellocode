@@ -2,6 +2,7 @@ package javaguide.leetcode.tree;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 /**
  * @Author: JarvanW
@@ -37,6 +38,27 @@ public class code144 {
         preorder(root.right, result);
     }
 
+    // 迭代法求前序遍历
+    public List<Integer> preorderTraversal1(TreeNode root) {
+        List<Integer> result = new ArrayList<>();
+        if (root == null) {
+            return result;
+        }
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root);
+        while (!stack.isEmpty()) {
+            TreeNode node = stack.pop();
+            result.add(node.val);
+            if (node.right != null) {
+                stack.push(node.right);
+            }
+            if (node.left != null) {
+                stack.push(node.left);
+            }
+        }
+        return result;
+    }
+
     public static void main(String[] args) {
         // 创建二叉树
         TreeNode root = new TreeNode(1);
@@ -50,5 +72,8 @@ public class code144 {
         // 执行前序遍历并打印结果
         List<Integer> result = preorderTraversal(root);
         System.out.println(result);
+
+        List<Integer> result1 = preorderTraversal(root);
+        System.out.println(result1);
     }
 }
