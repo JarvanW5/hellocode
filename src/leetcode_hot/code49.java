@@ -10,7 +10,7 @@ import java.util.*;
  * @Requirement: String中的 toCharArray()方法，将字符串“str” 转换为字符数组 "array"
  */
 public class code49 {
-    public List<List<String>> groupAnagrams(String[] strs) {
+    public static List<List<String>> groupAnagrams(String[] strs) {
 
         HashMap<String, List<String>> map = new HashMap<>();
         for (String str : strs) {
@@ -26,4 +26,17 @@ public class code49 {
         }
         return new ArrayList<List<String>>(map.values());
     }
+
+    public static void main(String[] args) {
+        String[] strs = {"eat", "tea", "tan", "ate", "nat", "bat"};
+        List<List<String>> lists = groupAnagrams(strs);
+
+        System.out.println(lists);
+
+    }
+
+
+
+
+
 }
