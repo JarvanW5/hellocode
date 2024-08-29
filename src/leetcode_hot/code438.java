@@ -33,10 +33,7 @@ public class code438 {
 
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
-
-        String s = scanner.next();
-        String p = scanner.next();
+        String s = "cbaebabacd", p = "abc";
 
         List<Integer> list = findAnagrams(s, p);
         System.out.println(list);
