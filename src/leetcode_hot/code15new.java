@@ -5,13 +5,13 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * @Author:JarvanW
- * @Date:2024/4/18
- * @Description:三数之和
- * @Version:1.8
- * @Requirement:
+ * @Author: JarvanW
+ * @Date: 2024/8/28
+ * @Description:
+ * @Requirements:
  */
-public class code15 {
+
+public class code15new {
     public static List<List<Integer>> threeSum(int[] nums) {
         int n = nums.length;
         Arrays.sort(nums);
@@ -33,7 +33,7 @@ public class code15 {
                 }
                 // 需要保证 b 的指针在 c 的指针的左侧
                 while (second < third && nums[second] + nums[third] > target) {
-                    --third;
+                    third--;
                 }
                 // 如果指针重合，随着 b 后续的增加
                 // 就不会有满足 a+b+c=0 并且 b<c 的 c 了，可以退出循环
