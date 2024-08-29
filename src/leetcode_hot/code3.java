@@ -15,9 +15,12 @@ public class code3 {
         int left = 0;
         int right = 0;
         int res = 0;
+        // 滑动窗口的设置
         while (right < s.length()) {
             char r = s.charAt(right++);
             hashMap.put(r, hashMap.getOrDefault(r, 0) + 1);
+
+            // 又一次判断，如果 > 1 说明当前 left 和 right 所指向的元素相同，因此再使用一次 hashmap 来 减去当前值的数量
             while (hashMap.get(r) > 1) {
 
                 char l = s.charAt(left++);
