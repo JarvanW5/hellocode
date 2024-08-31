@@ -12,9 +12,9 @@ public class code48 {
     public static void rotate(int[][] matrix) {
 
         int n = matrix.length;
-        int m = matrix[0].length;
+        int m = matrix[0].length;    // 列
 
-        int[][] matrix_new = new int[n][n];
+        int[][] matrix_new = new int[m][n];
         for (int i = 0; i < n; i++) {
             for (int i1 = 0; i1 < m; i1++) {
                 matrix_new[i1][n-1-i] = matrix[i][i1];
