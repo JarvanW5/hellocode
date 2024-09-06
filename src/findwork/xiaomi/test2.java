@@ -1,4 +1,4 @@
-package src.findwork.xiaomi;
+package findwork.xiaomi;
 
 import java.util.Scanner;
 
