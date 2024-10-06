@@ -20,6 +20,7 @@ public class code283 {
 
         for (int i =left;i<nums.length;i++){
             nums[i] = 0;
+            
         }
     }
 
