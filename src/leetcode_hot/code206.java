@@ -10,6 +10,8 @@ package leetcode_hot;
 public class code206 {
 
     public ListNode reverseList(ListNode head) {
+        if(head == null) return null;
+
         ListNode cur = head,pre = null;
         while (cur != null){
             ListNode tmp = cur.next;
