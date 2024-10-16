@@ -28,29 +28,41 @@ public class code94 {
             return;
         }
 
-        inorder(root.left, result);
-        result.add(root.val);
-        inorder(root.right, result);
+        inorder(root.left, result);    // 先遍历左子树
+        result.add(root.val);          // 访问根节点
+        inorder(root.right, result);   // 再遍历右子树
+    }
+
+
+    public static void main(String[] args) {
+        TreeNode root = new TreeNode(1);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(3);
+        root.left.left = new TreeNode(4);
+        root.left.right = new TreeNode(5);
+
+        List<Integer> result = inorderTraversal(root);
+        System.out.println(result);
     }
 
 
     // 非递归
-    public void inorder(TreeNode root) {
+    public List<Integer> inorder1(TreeNode root) {
+        List<Integer> result = new ArrayList<>();
         Stack<TreeNode> stack = new Stack<>();
         TreeNode current = root;
 
-        while (current != null || !stack.isEmpty()) {
-            // 一直遍历左子树并压入栈
-            while (current != null) {
+        while (current != null || !stack.isEmpty()){
+            while (current != null){
                 stack.push(current);
                 current = current.left;
             }
-            // 弹出栈顶元素并访问
+
             current = stack.pop();
-            System.out.print(current.val + " ");
-            // 转向右子树
+            result.add(current.val);
             current = current.right;
         }
+        return result;
     }
 
 }
