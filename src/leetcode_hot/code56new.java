@@ -3,6 +3,7 @@ package leetcode_hot;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
+import java.util.List;
 
 /**
  * @Author: JarvanW
@@ -15,33 +16,36 @@ public class code56new {
 
     public static int[][] merge(int[][] intervals) {
 
-        // 1、检查输入是否为空
-        if(intervals == null || intervals.length == 0){
-            return new int[0][];
+        if (intervals == null || intervals.length == 0) {
+            return new int[0][0];
         }
 
-        // 2、按照区间的起始位置排序
+        // 按照区间的起始位置进行排序
         Arrays.sort(intervals, (a, b) -> Integer.compare(a[0], b[0]));
 
-        // 3、初始化一个 LinkedList 用于存储合并后的区间
-        LinkedList<int[]> arrayList = new LinkedList<>();
+        // 用一个列表来保存合并后的区间
+        List<int[]> merged = new ArrayList<>();
 
-        // 4、遍历排序后的区间数组
+        // 遍历每一个区间
         for (int[] interval : intervals) {
-            // 5、判断是否需要合并区间
-            if (arrayList.isEmpty() || arrayList.getLast()[1] < interval[0]) {
-                arrayList.add(interval);
+            // 如果列表为空，或者当前区间与列表中的最后一个区间不重叠
+            if (merged.isEmpty() || merged.get(merged.size() - 1)[1] < interval[0]) {
+                merged.add(interval);
             } else {
-                arrayList.getLast()[1] = Math.max(arrayList.getLast()[1], interval[1]);
+                // 合并区间
+                merged.get(merged.size() - 1)[1] = Math.max(merged.get(merged.size() - 1)[1], interval[1]);
             }
         }
-        // 6、将 LinkedList 转换为二维数组并返回
-        return arrayList.toArray(new int[arrayList.size()][]);
+
+        // 转换结果列表为二维数组并返回
+        return merged.toArray(new int[merged.size()][]);
     }
 
 
     public static void main(String[] args) {
         int[][] intervals = {{1, 3}, {2, 6}, {8, 10}, {15, 18}};
+        int[][] merge = merge(intervals);
+        System.out.println(merge);
     }
 
 
