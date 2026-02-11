@@ -3,7 +3,7 @@
  * @Date:2024/4/23
  * @Description:
  * @Version:1.8
- * @Requirement:
+ * @Requirement: 测试
  */
 public class F1ScoreCalculator {
 
